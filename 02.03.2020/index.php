@@ -20,6 +20,7 @@ while ($postrow[] = $result->fetch());
 ?>
 <?php
 //вывод статьи в соответствии с страницой
+//html вставки скомуниздил
 echo "<table>";
 for($i = 0; $i < 1; $i++){
     echo "<tr>
