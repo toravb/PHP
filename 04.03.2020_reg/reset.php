@@ -34,3 +34,4 @@ if($_POST['reset']) {
         echo "<form action='index_login.php'><input type='submit' value='Перейти ко входу'></form>";
     }
 }
+?>
