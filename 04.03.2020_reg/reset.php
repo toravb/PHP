@@ -9,7 +9,7 @@ require_once ("includes/data.php");
     <input type="submit" name="reset" required value="Сбросить пароль">
 </form>
 
-<?php
+<?php //новые переменные, чтобы не было конфликтов
 $new_pass = $_POST['new_pass'];
 $newc_pass = $_POST['newc_pass']
 ?>
@@ -25,7 +25,7 @@ if($_POST['reset']) {
     elseif ($count_email->rowCount() == 0){
         echo 'Указанный email не используется';
     }
-    else {
+    else { //обновляем пароль, если все проверки были пройдены
         $new_pass = password_hash($new_pass, PASSWORD_DEFAULT);
 
         $reset_pass = $connect->query("UPDATE username SET password = '$new_pass' WHERE email = '$email'");
