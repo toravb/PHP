@@ -2,7 +2,7 @@
 
 if ($_GET['register']){
     require_once './models/register.php';
-    if ($verify == true) {
+    if ($verify == true) { //перенаправление в случае успешной регистрации, логина
         require_once './views/Success.php';
         die;
     }
