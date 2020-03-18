@@ -1,7 +1,7 @@
 <?php
 $verify = false;
 if (isset($_POST['register'])) {
-
+     // проверки, данные из бд
     $verify_login = preg_match("/^[a-zA-Z0-9]+$/", $login);
     $len_login = strlen($login);
     $len_pass = strlen($pass);
@@ -24,7 +24,7 @@ if (isset($_POST['register'])) {
         echo 'Указанный email кем-то используется';
     } elseif ($data['login'] == $login) {
         echo 'Указаный логин кем-то используется';
-    } else {
+    } else {//если проверки пройдены, отправляем данные в бд, предварительно хешируя пароль
         $pass = password_hash($password, PASSWORD_DEFAULT);
 
         $reg = $connect->prepare("INSERT INTO users (`name`, `s_name`, `age`, `email`, `login`) VALUES (:u_name, :s_name, :age, :email, :login); INSERT INTO `username`(`email`, `password`) VALUES (:email, :pass)");
