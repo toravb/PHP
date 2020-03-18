@@ -1,7 +1,7 @@
 <?php
 $verify = false;
 if (isset($_POST['login'])) {
-
+    //берем логин и пароль из бд, выполняем проверки
     $count = $connect->prepare("SELECT * FROM username WHERE email=:email");
     $count->bindValue(':email', $email, PDO::PARAM_STR);
     $count->execute();
