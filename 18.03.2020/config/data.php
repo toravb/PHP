@@ -1,4 +1,4 @@
-<?php
+<?php//вынес в отдельный файл, чтобы не писать по многу раз
 $email = $_POST['email'];
 $pass = $_POST['password'];
 $c_pass = $_POST['c_password'];
